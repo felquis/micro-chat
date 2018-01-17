@@ -1,7 +1,13 @@
 import { Component } from 'react'
-import Chat from '../components/chat'
+import shortid from 'shortid'
 
-const newRamdomMessage = () => 'Hello from Planet Earth' 
+import ChatInput from '../components/ChatInput'
+import Chat from '../components/Chat'
+
+const buildMessage = ({ message } = {}) => ({
+    message: message || 'Hello from Planet Earth',
+    id: shortid.generate()
+})
 
 class Container extends Component {
     constructor (props) {
@@ -10,19 +16,33 @@ class Container extends Component {
         this.state = {
             messages: []
         }
+
+        this.onChatSubmit = this.onChatSubmit.bind(this)
     }
 
-    componentDidMount() {
+    componentDidMount () {
         setInterval(() => {
             this.setState({
-                messages: [...this.state.messages, newRamdomMessage()]
+                messages: [buildMessage(), ...this.state.messages]
             })
-        }, 800)
+        }, 1500)
+    }
+
+    onChatSubmit ({ message }) {
+        this.setState({
+            messages: [buildMessage({ message }), ...this.state.messages]
+        })
     }
 
     render () {
         return (
-            <Chat messages={this.state.messages} />
+            <div>
+                <Chat
+                    messages={this.state.messages}
+                />
+
+                <ChatInput onSubmit={this.onChatSubmit} />
+            </div>
         )
     }
 }

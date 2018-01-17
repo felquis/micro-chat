@@ -1,18 +1,36 @@
 const Chat = (props) => (
     <div>
-        <div className="messages">
-            <ul className="message-list">
-                {props.messages.map(({ message }) => (
-                    <li key={message}>{message}</li>
+        <div className="container">
+            <ul className="chat-container">
+                {props.messages.map(({ message, id }) => (
+                    <li className="message" key={id}>{message}</li>
                 ))}
             </ul>
-
-            <MessageInput />
         </div>
 
         <style jsx>{`
-            .messages {
-                width: 20em;
+            .container {
+                width 400px;
+                margin 0 auto;
+                border solid 1px #ccc;
+                border-radius 5px;
+                overflow hidden;
+            }
+
+            .chat-container {
+                height 400px;
+                overflow auto;
+                transform rotate(180deg);
+                direction rtl;
+                overflow: hidden;
+                overflow-y: scroll;
+            }
+
+            .message {            
+                border-bottom solid 1px #ccc;
+                padding 20px;
+                transform rotate(180deg);
+                direction ltr;
             }
 
             .message-list {
@@ -24,13 +42,6 @@ const Chat = (props) => (
                 text-align: right;
             }
         `}</style>
-    </div>
-)
-
-const MessageInput = () => (
-    <div className="message-input">
-        <input type="text" />
-        <button type="button">Enviar</button>
     </div>
 )
 
