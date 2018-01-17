@@ -11,6 +11,7 @@ export default () => (
     <Nav />
 
     <div className="hero">
+      <img src="/static/cool-avatar.jpg" />
       <h1 className="title">micro-chat</h1>
       <p className="description">A minimalist <strong>chat-ui</strong> written with ReactJS</p>
 
