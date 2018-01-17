@@ -1,4 +1,5 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
+import { func } from 'prop-types'
 
 class ChatInput extends Component {
     constructor (props) {
@@ -9,6 +10,7 @@ class ChatInput extends Component {
         }
 
         this.typingMessage = this.typingMessage.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     typingMessage (e) {
@@ -17,17 +19,19 @@ class ChatInput extends Component {
         })
     }
 
+    handleSubmit (e) {
+        e.preventDefault()
+
+        this.props.onSubmit(Object.assign({}, this.state))
+
+        this.setState({
+            message: ''
+        })
+    }
+
     render () {
         return (
-            <form onSubmit={(e) => {
-                e.preventDefault()
-        
-                this.props.onSubmit(Object.assign({}, this.state))
-
-                this.setState({
-                    message: ''
-                })
-            }}>
+            <form onSubmit={this.handleSubmit}>
                 <input
                     onChange={this.typingMessage}
                     value={this.state.message}
@@ -39,7 +43,7 @@ class ChatInput extends Component {
                     type="button"
                 >Enviar</button>
 
-                <style jsx>{`
+                <style jsx="true">{`
                     form {
                         width: 100%;
                         display: flex;
@@ -52,6 +56,10 @@ class ChatInput extends Component {
             </form>
         )
     }
+}
+
+ChatInput.propTypes = {
+    onSubmit: func.isRequired,
 }
 
 export default ChatInput

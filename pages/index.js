@@ -1,7 +1,8 @@
+import React from 'react'
 import Link from 'next/link'
 import Head from '../components/head'
 import Nav from '../components/nav'
-import Chat from '../container/chat'
+import Chat from '../container/Chat'
 
 export default () => (
   <div>

@@ -1,3 +1,6 @@
+import React from 'react'
+import { arrayOf, shape, string } from 'prop-types'
+
 const Chat = (props) => (
     <div>
         <div className="container">
@@ -8,7 +11,7 @@ const Chat = (props) => (
             </ul>
         </div>
 
-        <style jsx>{`
+        <style jsx="true">{`
             .container {
                 width 400px;
                 margin 0 auto;
@@ -32,17 +35,19 @@ const Chat = (props) => (
                 transform rotate(180deg);
                 direction ltr;
             }
-
-            .message-list {
-                min-height: 10em;
-                background-color: #f3f3f3;
-            }
-
-            .alignRight {
-                text-align: right;
-            }
         `}</style>
     </div>
 )
+
+Chat.propTypes = {
+    messages: arrayOf(shape({
+        message: string,
+        id: string,
+    })),
+}
+
+Chat.defaultProps = {
+    message: [],
+}
 
 export default Chat

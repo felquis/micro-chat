@@ -1,13 +1,9 @@
-import { Component } from 'react'
-import shortid from 'shortid'
+import React, { Component } from 'react'
 
 import ChatInput from '../components/ChatInput'
 import Chat from '../components/Chat'
 
-const buildMessage = ({ message } = {}) => ({
-    message: message || 'Hello from Planet Earth',
-    id: shortid.generate()
-})
+import buildMessage from '../helpers/buildMessage'
 
 class Container extends Component {
     constructor (props) {
