@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import { func } from 'prop-types'
+import SendIcon from 'react-icons/lib/fa/paper-plane-o'
+import cx from 'classnames'
+
+const buttonClasses = ({ message }) => cx({
+    active: message.length > 1
+})
 
 class ChatInput extends Component {
     constructor (props) {
@@ -15,12 +21,15 @@ class ChatInput extends Component {
 
     typingMessage (e) {
         this.setState({
-            message: e.target.value
+            message: e.target.value,
+            who: 'me',
         })
     }
 
     handleSubmit (e) {
         e.preventDefault()
+
+        if (!this.state.message) return
 
         this.props.onSubmit(Object.assign({}, this.state))
 
@@ -40,17 +49,53 @@ class ChatInput extends Component {
 
                 <button
                     type="submit"
-                    type="button"
-                >Enviar</button>
+                    className={buttonClasses({ message: this.state.message })}
+                >
+                    <div>
+                        <SendIcon /> <span>Send</span>
+                    </div>
+                </button>
 
                 <style jsx="true">{`
                     form {
-                        width: 100%;
+                        margin-left: 1em;
+                        margin-right: 1em;
                         display: flex;
                     }
 
                     input {
                         width: 100%;
+                        border: 1px solid #67995c;
+                        padding: 0.5em 1em;
+                        border-radius: 4px;
+                    }
+
+                    button {
+                        padding: 0.5em 1em;
+                        border: 0;
+                        background: none;
+                        color: #fff;
+                        margin-left: 1em;
+                        background-color: #67995c; 
+                        font-weight: bold;
+                        cursor: pointer;
+                        border-radius: 4px;
+                    }
+
+                    .active {
+                        background-color: #347F28;
+                    }
+
+                    button:hover {
+                        background-color: silver;
+                    }
+
+                    button div {
+                        display: flex;
+                    }
+
+                    button span {
+                        margin-left: 0.5em;
                     }
                 `}</style>
             </form>

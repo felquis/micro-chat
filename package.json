@@ -21,16 +21,21 @@
     "prepublish-preview": "npm run build-storybook"
   },
   "dependencies": {
+    "@storybook/addon-storyshots": "^3.3.10",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "classnames": "^2.2.5",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.1.1",
     "loki": "^0.8.0",
+    "moment": "^2.20.1",
     "next": "^4.2.3",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-github-corner": "^2.1.0",
+    "react-icons": "^2.2.7",
     "shortid": "^2.2.8"
   },
   "devDependencies": {

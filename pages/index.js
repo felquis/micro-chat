@@ -11,12 +11,16 @@ export default () => (
     <Nav />
 
     <div className="hero">
-      <img src="/static/cool-avatar.jpg" />
+      <div className="avatar">
+        <img src="/static/cool-avatar.jpg" />
+      </div>
       <h1 className="title">micro-chat</h1>
-      <p className="description">A minimalist <strong>chat-ui</strong> written with ReactJS</p>
+      <p className="description">Just a very simple <strong>chat-ui</strong> written with ReactJS</p>
 
-      <div className="row">
-        <Chat />
+      <div className="chat-box">
+        <div>
+          <Chat />
+        </div>
       </div>
     </div>
 
@@ -24,45 +28,46 @@ export default () => (
       .hero {
         width: 100%;
         color: #333;
+        margin-top: 2em;
       }
+
+      .chat-box {
+        display: flex;
+        margin: 0 0 2em 0;
+        justify-content: center;
+      }
+
+      .chat-box > div {
+        max-width: 950px;
+        width: 100%;
+        margin-left: 2em;
+      }
+
+      .chat-box > div:first-child {
+        margin-left: 0;
+      }
+
+      .avatar {
+        text-align: center;
+      }
+
+      .avatar img {
+        border-radius: 50%;
+        width: 100px;
+      }
+
       .title {
         margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
+        padding-top: 0.5em;
         font-size: 48px;
       }
+
       .title, .description {
         text-align: center;
       }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9B9B9B;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
+
+      .description {
+        margin: 0.5em 0;
       }
     `}</style>
   </div>
