@@ -12,7 +12,7 @@ export default () => (
 
     <div className="hero">
       <div className="avatar">
-        <img src="/static/cool-avatar.jpg" />
+        <img src="static/cool-avatar.jpg" />
       </div>
       <h1 className="title">micro-chat</h1>
       <p className="description">Just a very simple <strong>chat-ui</strong> written with ReactJS</p>

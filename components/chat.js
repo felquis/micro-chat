@@ -81,7 +81,7 @@ class Chat extends Component {
                         border-radius: 50%;
                         display: block;
                         margin-right: 1em;
-                        background-image: url('/static/cool-avatar.jpg');
+                        background-image: url('static/cool-avatar.jpg');
                         background-size: cover;
                     }
         
@@ -90,7 +90,7 @@ class Chat extends Component {
                     }
                     
                     .message-me .message-avatar {
-                        background-image: url('/static/maggie.gif')
+                        background-image: url('static/maggie.gif')
                     }
 
                     .message-me .message-body {
