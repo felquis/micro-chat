@@ -9,7 +9,7 @@ module.exports = {
 
     return config
   },
-  assetPrefix: '/micro-chat/out',
+  assetPrefix: './',
   exportPathMap: (a, b) => {
     console.log(a, b)
 
