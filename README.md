@@ -1,6 +1,6 @@
 Welcome to micro-chat
 
-An enterprise, micro chat application for all kinds of troubles and exities.
+Very simple chat ui written with React, built for all kinds of troubles and anxieties.
 
 > This projects uses [Create Next App](https://github.com/segmentio/create-next-app).
 
@@ -141,25 +141,15 @@ _Note: `getInitialProps` can **not** be used in children components. Only in `pa
 
 Read more about [fetching data and the component lifecycle](https://github.com/zeit/next.js#fetching-data-and-component-lifecycle)
 
-## Deploy to Now
+## Deploy to GitHub pages
 
-[now](https://zeit.co/now) offers a zero-configuration single-command deployment.
+**TODO**
 
-1. Install the `now` command-line tool either via the recommended [desktop tool](https://zeit.co/download) or via node with `npm install -g now`.
-
-2. Run `now` from your project directory. You will see a **now.sh** URL in your output like this:
-
-    ```
-    > Ready! https://your-project-dirname-tpspyhtdtk.now.sh (copied to clipboard)
-    ```
-
-    Paste that URL into your browser when the build is complete, and you will see your deployed app.
-
-You can find more details about [`now` here](https://zeit.co/now).
+Put the exported files into GitHub Pages, find a out to include static files from storybook.
 
 ## Testing
 
-Create a file named like `ComponentName.test.js`, and run `npm run test`
+Create a file named like `ComponentName.test.js`, and run `npm run test`, snapshoting tests are also included.
 
 ## Visual Regration Testing
 

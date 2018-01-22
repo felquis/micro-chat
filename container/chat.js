@@ -43,6 +43,8 @@ class Container extends Component {
     }
 
     render () {
+        const { inputFixed } = this.props
+
         return (
             <div className="root">
                 <div className="chat-container">
@@ -50,7 +52,10 @@ class Container extends Component {
                         messages={this.state.messages}
                     />
 
-                    <ChatInput onSubmit={this.onChatSubmit} />
+                    <ChatInput
+                        onSubmit={this.onChatSubmit}
+                        fixed={inputFixed}
+                    />
                 </div>
 
                 <style jsx="true">{`

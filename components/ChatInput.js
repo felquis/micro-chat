@@ -4,7 +4,11 @@ import SendIcon from 'react-icons/lib/fa/paper-plane-o'
 import cx from 'classnames'
 
 const buttonClasses = ({ message }) => cx({
-    active: message.length > 1
+    active: message.length >= 1
+})
+
+const formClasses = ({ fixed }) => cx({
+    fixed: fixed
 })
 
 class ChatInput extends Component {
@@ -39,28 +43,53 @@ class ChatInput extends Component {
     }
 
     render () {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <input
-                    onChange={this.typingMessage}
-                    value={this.state.message}
-                    type="textarea"
-                />
+        const { fixed } = this.props
 
-                <button
-                    type="submit"
-                    className={buttonClasses({ message: this.state.message })}
+        return (
+            <div className={formClasses({ fixed })}>
+                <form
+                    onSubmit={this.handleSubmit}
                 >
-                    <div>
-                        <SendIcon /> <span>Send</span>
-                    </div>
-                </button>
+                    <input
+                        onChange={this.typingMessage}
+                        value={this.state.message}
+                        type="textarea"
+                    />
+
+                    <button
+                        type="submit"
+                        className={buttonClasses({ message: this.state.message })}
+                    >
+                        <div>
+                            <SendIcon /> <span>Send</span>
+                        </div>
+                    </button>
+
+                </form>
 
                 <style jsx="true">{`
                     form {
                         margin-left: 1em;
                         margin-right: 1em;
                         display: flex;
+                        background-color: #fff;
+                        padding-top: 1em;
+                    }
+
+                    .fixed {
+                        position: fixed;
+                        bottom: 0;
+                        left: 0;
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100px;
+                        align-items: center;
+                        background-color: #fff;
+                    }
+                    
+                    .fixed form {
+                        width: 518px;
                     }
 
                     input {
@@ -98,7 +127,7 @@ class ChatInput extends Component {
                         margin-left: 0.5em;
                     }
                 `}</style>
-            </form>
+            </div>
         )
     }
 }

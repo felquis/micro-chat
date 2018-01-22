@@ -19,7 +19,7 @@ export default () => (
 
       <div className="chat-box">
         <div>
-          <Chat />
+          <Chat inputFixed={true} />
         </div>
       </div>
     </div>
