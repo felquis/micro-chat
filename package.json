@@ -11,56 +11,18 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest",
     "export": "next export",
-    "loki-init": "loki init",
-    "preloki-update": "npm run build-storybook",
-    "loki-update": "loki update --reactUri=file:./storybook-static",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "preview-static": "serve out",
-    "prepublish-preview": "npm run build-storybook"
+    "preview-static": "serve out"
   },
   "dependencies": {
-    "@storybook/addon-storyshots": "^3.3.10",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "classnames": "^2.2.5",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^22.1.1",
-    "loki": "^0.8.0",
-    "next": "^4.2.3",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-github-corner": "^2.1.0",
-    "react-icons": "^2.2.7",
-    "serve": "^6.4.8",
-    "shortid": "^2.2.8"
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "^3.3.10",
-    "@storybook/addon-links": "^3.3.10",
-    "@storybook/addons": "^3.3.10",
-    "@storybook/react": "^3.3.10",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.1.0"
-  },
-  "loki": {
-    "configurations": {
-      "chrome.laptop": {
-        "target": "chrome.app",
-        "width": 1366,
-        "height": 768,
-        "deviceScaleFactor": 1,
-        "mobile": false,
-        "fitWindow": false
-      },
-      "chrome.iphone7": {
-        "target": "chrome.app",
-        "preset": "iPhone 7"
-      }
-    }
+    "classnames": "^2.3.1",
+    "nanoid": "^3.1.32",
+    "next": "^12.0.8",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-github-corner": "^2.5.0",
+    "react-icons": "^4.3.1",
+    "serve": "^13.0.2"
   }
 }

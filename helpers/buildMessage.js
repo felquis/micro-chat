@@ -1,7 +1,7 @@
-import shortid from 'shortid'
+import { nanoid } from 'nanoid'
 
 export default ({ message, who } = {}) => ({
     message: message || 'Hello from Planet Earth',
-    id: shortid.generate(),
+    id: nanoid(),
     who: who || 'other'
 })

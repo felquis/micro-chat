@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { func } from 'prop-types'
-import SendIcon from 'react-icons/lib/fa/paper-plane-o'
+import { RiSendPlaneFill } from 'react-icons/ri'
 import cx from 'classnames'
 
 const buttonClasses = ({ message }) => cx({
@@ -61,7 +61,7 @@ class ChatInput extends Component {
                         className={buttonClasses({ message: this.state.message })}
                     >
                         <div>
-                            <SendIcon /> <span>Send</span>
+                            <RiSendPlaneFill /> <span>Send</span>
                         </div>
                     </button>
 

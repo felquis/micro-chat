@@ -26,24 +26,24 @@ class Chat extends Component {
         
                 <style jsx="true">{`
                     .container {
-                        width 100%;
-                        margin 0 auto;
-                        border-radius 5px;
+                        width: 100%;
+                        margin: 0 auto;
+                        border-radius: 5px;
                         padding-bottom: 60px;
                     }
         
                     .chat-container {
-                        height auto;
-                        transform rotate(180deg);
-                        direction rtl;
+                        height: auto;
+                        transform: rotate(180deg);
+                        direction: rtl;
                         list-style: none;
                         padding: 0;
                     }
         
                     .message {
-                        padding 0.5em 0px;
-                        transform rotate(180deg);
-                        direction ltr;
+                        padding: 0.5rem 0px;
+                        transform: rotate(180deg);
+                        direction: ltr;
                         display: flex;
                     }
         
